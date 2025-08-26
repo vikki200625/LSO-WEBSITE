@@ -430,4 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
-</html>
+</html> 
+
+// Close when clicking outside
