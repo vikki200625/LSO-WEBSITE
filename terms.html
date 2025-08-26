@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms and Conditions - MyWebsite</title>
+    <style>
+        :root {
+            --cream: #fdfaf5;
+            --white: #ffffff;
+            --text: #333333;
+            --muted: #6b7280;
+            --accent: #d4a373;
+            --accent-dark: #b78147;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fdfaf5 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            flex: 1;
+            padding: 60px 20px;
+        }
+
+        .terms-container {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .terms-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .terms-header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .terms-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .section h3 {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: var(--text);
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .section ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .highlight {
+            background: rgba(212, 163, 115, 0.1);
+            padding: 15px 20px;
+            border-left: 4px solid var(--accent);
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background: var(--cream);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 30px 20px;
+            }
+
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">MyWebsite</div>
+                <a href="index.php">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="terms-container">
+            <div class="terms-header">
+                <h1>Terms and Conditions</h1>
+                <p>Welcome to MyWebsite. These terms and conditions outline the rules and regulations for the use of our website.</p>
+            </div>
+
+            <div class="terms-content">
+                <div class="section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing and using MyWebsite, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+                    
+                    <div class="highlight">
+                        <p>If you do not agree to these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>2. Use of the Website</h2>
+                    <p>You may use our website for lawful purposes only. You agree not to use the website in any way that could damage, disable, or impair our servers or networks.</p>
+                    
+                    <h3>Prohibited Activities</h3>
+                    <ul>
+                        <li>Using the website for any illegal or unauthorized purpose</li>
+                        <li>Violating any international, federal, provincial, or state regulations</li>
+                        <li>Infringing upon or violating our intellectual property rights</li>
+                        <li>Harassing, abusing, or harming another person</li>
+                        <li>Uploading or transmitting viruses or any other type of malicious code</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>3. User Accounts</h2>
+                    <p>When you create an account with us, you agree to provide accurate, complete, and current information. You are responsible for maintaining the confidentiality of your account and password.</p>
+                    
+                    <h3>Registration Requirements</h3>
+                    <ul>
+                        <li>You must be at least 13 years old to register</li>
+                        <li>You must provide a valid email address</li>
+                        <li>You must choose a secure password</li>
+                        <li>You must agree to receive communications from us</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>4. Donations</h2>
+                    <p>MyWebsite facilitates donations to various causes. All donations are non-refundable except where required by law.</p>
+                    
+                    <h3>Donation Process</h3>
+                    <ul>
+                        <li>Donations are processed through secure payment gateways</li>
+                        <li>We do not store your payment information</li>
+                        <li>Donation receipts are provided for tax purposes</li>
+                        <li>Minimum donation amounts may apply for certain causes</li>
+                    </ul>
+                    
+                    <h3>Donation Transparency</h3>
+                    <p>We strive to provide transparency regarding how donations are used. Impact reports and financial statements are made available periodically.</p>
+                </div>
+
+                <div class="section">
+                    <h2>5. Blood Donation</h2>
+                    <p>Our blood donation service connects donors with blood donation camps and appointments.</p>
+                    
+                    <h3>Eligibility Requirements</h3>
+                    <ul>
+                        <li>Must be at least 17 years old (or 16 with parental consent)</li>
+                        <li>Must weigh at least 110 pounds</li>
+                        <li>Must be in good general health</li>
+                        <li>Must not have certain medical conditions</li>
+                    </ul>
+                    
+                    <h3>Appointment Booking</h3>
+                    <p>When you book an appointment, you agree to arrive on time and follow all blood donation guidelines and procedures.</p>
+                </div>
+
+                <div class="section">
+                    <h2>6. Yoga and Wellness Content</h2>
+                    <p>Our yoga and wellness content is provided for informational and educational purposes only.</p>
+                    
+                    <h3>Medical Disclaimer</h3>
+                    <div class="highlight">
+                        <p>The yoga and wellness content on our website is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+                    </div>
+                    
+                    <h3>Usage Guidelines</h3>
+                    <ul>
+                        <li>Practice at your own risk</li>
+                        <li>Consult your doctor before starting any new exercise program</li>
+                        <li>Stop immediately if you experience pain or discomfort</li>
+                        <li>Modify poses as needed for your body</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>7. Intellectual Property</h2>
+                    <p>Unless otherwise noted, the website and its original content, features, and functionality are and will remain the exclusive property of MyWebsite.</p>
+                    
+                    <h3>Content Usage</h3>
+                    <p>You may not use, download, reproduce, distribute, modify, display, perform, publish, license, create derivative works from, transfer, or sell any content from our website without our prior written permission.</p>
+                </div>
+
+                <div class="section">
+                    <h2>8. Privacy Policy</h2>
+                    <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your personal information.</p>
+                    
+                    <h3>Data Collection</h3>
+                    <ul>
+                        <li>We collect information you provide directly to us</li>
+                        <li>We collect information automatically as you use our website</li>
+                        <li>We use cookies to improve your experience</li>
+                        <li>We do not sell your personal information to third parties</li>
+                    </ul>
+                    
+                    <p>For more details, please read our full <a href="#">Privacy Policy</a>.</p>
+                </div>
+
+                <div class="section">
+                    <h2>9. Limitation of Liability</h2>
+                    <p>MyWebsite shall not be liable for any damages arising out of or related to your use of or inability to use the website, including but not limited to direct, indirect, incidental, punitive, and consequential damages.</p>
+                </div>
+
+                <div class="section">
+                    <h2>10. Indemnification</h2>
+                    <p>You agree to indemnify and hold MyWebsite harmless from any claims, damages, liabilities, costs, and fees, including reasonable attorney's fees, arising from your use of the website or violation of these terms.</p>
+                </div>
+
+                <div class="section">
+                    <h2>11. Termination</h2>
+                    <p>We may terminate or suspend your account and bar access to the website immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the terms.</p>
+                </div>
+
+                <div class="section">
+                    <h2>12. Changes to Terms</h2>
+                    <p>We reserve the right to modify these terms at any time. The updated terms will be effective immediately upon posting. Your continued use of the website after any changes constitutes acceptance of the new terms.</p>
+                </div>
+
+                <div class="section">
+                    <h2>13. Governing Law</h2>
+                    <p>These terms and conditions shall be governed by and construed in accordance with the laws of the jurisdiction in which MyWebsite operates, without regard to its conflict of law provisions.</p>
+                </div>
+
+                <div class="section">
+                    <h2>14. Contact Information</h2>
+                    <p>If you have any questions about these Terms and Conditions, please contact us:</p>
+                    <ul>
+                        <li>Email: 123@gmail.com</li>
+                        <li>Phone: +91 15132 13131</li>
+                        <li>Address: [Your Address]</li>
+                    </ul>
+                </div>
+
+                <div class="last-updated">
+                    <p>Last updated: January 1, 2024</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <?php echo date('Y'); ?> MyWebsite. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

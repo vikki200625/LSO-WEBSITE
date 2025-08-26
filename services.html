@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services</title>
+  <style>
+    :root {
+      --cream: #fdfaf5;
+      --white: #ffffff;
+      --text: #333333;
+      --muted: #6b7280;
+      --accent: #d4a373;
+      --accent-dark: #b78147;
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      --radius: 14px;
+      --gradient-accent: linear-gradient(45deg, var(--accent), var(--accent-dark));
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--white), var(--cream));
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #eee;
+      backdrop-filter: saturate(1.2) blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav a {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .nav a:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, var(--cream), var(--white));
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 15px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin: 0 0 25px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--gradient-accent);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-ghost {
+      background: var(--white);
+      border: 1px solid #ddd;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: var(--cream);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--cream-2);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8a5a2b;
+      margin-bottom: 16px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid #f0e6d9;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0;
+    }
+
+    .hero-card ul li {
+      position: relative;
+      padding-left: 25px;
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .hero-card ul li::before {
+      content: '✅';
+      position: absolute;
+      left: 0;
+      font-size: 1rem;
+    }
+    
+    .chip {
+        display: inline-block;
+        background: var(--cream-2);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: .8rem;
+        font-weight: 700;
+        color: #8a5a2b;
+    }
+
+    /* Sections shared */
+    section { padding: 60px 20px; }
+
+    .section-cream { background: var(--cream); }
+
+    .title {
+      max-width: 980px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .title h2 {
+      font-size: 2.2rem;
+      margin: 0 0 12px;
+    }
+
+    .title p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Services grid */
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 25px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #f0e6d9;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0 0 10px;
+      flex-grow: 1;
+    }
+
+    .card .btn-ghost {
+      margin-top: auto;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* Stats */
+    .stats {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid #f0e6d9;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: scale(1.05);
+      background: var(--cream);
+    }
+
+    .stat .num {
+      font-weight: 800;
+      font-size: 2.5rem;
+      color: var(--accent);
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Steps */
+    .steps {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      background: var(--card);
+      border: 1px solid #f0e6d9;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .step .step-num {
+      background: var(--accent);
+      color: #fff;
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+      min-width: 48px;
+    }
+    
+    .step h3 { font-size: 1.4rem; margin: 0 0 8px; }
+    .step p { margin: 0; color: var(--muted); }
+
+    /* FAQ using details/summary */
+    .faq {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 15px;
+    }
+
+    details {
+      background: var(--card);
+      border: 1px solid #f0e6d9;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 16px 20px;
+      transition: all 0.3s ease;
+    }
+
+    details:hover {
+        background: var(--cream);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      list-style: none; /* Hide default arrow */
+      position: relative;
+    }
+    
+    summary::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        transition: transform 0.3s ease;
+        font-weight: normal;
+        font-size: 1.5rem;
+    }
+    
+    details[open] summary::after {
+        content: '—';
+        transform: rotate(180deg);
+    }
+
+    details p {
+      color: var(--muted);
+      margin: 15px 0 0;
+      padding-top: 15px;
+      border-top: 1px solid #f0f0f0;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--white);
+      border-top: 1px solid #eee;
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      text-align: center;
+      color: var(--muted);
+    }
+    
+    .footer-inner div {
+        font-size: 0.95rem;
+    }
+
+    .footer-link {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    
+    .footer-link:hover {
+      color: var(--text);
+    }
+    
+    .footer-contact {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .floating-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .floating-element {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0.1;
+        animation: float 8s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(15deg); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .grid-3, .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 { font-size: 2.5rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .hero h1 { font-size: 2rem; }
+      .grid-3, .grid-4, .steps {
+        grid-template-columns: 1fr;
+      }
+      .footer-inner {
+          flex-direction: column;
+          gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="floating-elements">
+      <div class="floating-element" style="top: 10%; left: 10%; animation-delay: 0s;">✨</div>
+      <div class="floating-element" style="top: 30%; right: 5%; animation-delay: 2s;">💖</div>
+      <div class="floating-element" style="top: 50%; left: 80%; animation-delay: 4s;">🧘‍♀️</div>
+      <div class="floating-element" style="top: 70%; right: 20%; animation-delay: 6s;">🤝</div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">MyWebsite</div>
+      <nav>
+        <a href="index.php">Home</a>
+        <a href="donate.php">Donate</a>
+        <a href="blooddonate.php">Blood Donation</a>
+        <a href="yoga.html">Yoga</a>
+        <a href="services.html" style="background:var(--cream)">Services</a>
+        <a href="contact.php">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">Our Services</span>
+        <h1>Practical tools and caring programs that help you live better and give better</h1>
+        <p>
+          From secure donations and blood-donation appointments to wellness sessions and community programs—
+          everything on this platform is designed to be simple, trustworthy, and impact‑driven.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="donate.php">Donate Now</a>
+          <a class="btn btn-ghost" href="blooddonate.php">Book Blood Donation</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="chip">What you’ll find here</span>
+        <ul>
+          <li>Money donation with transparent impact stories</li>
+          <li>Blood donation camps and appointment booking</li>
+          <li>Yoga and wellness content for everyday balance</li>
+          <li>Personal dashboard to track your activity</li>
+          <li>Community articles and learning hub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services -->
+  <section>
+    <div class="title">
+      <h2>Everything you need in one place</h2>
+      <p>A curated set of services to make giving and living meaningfully easier.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon">💳</div>
+        <h3>Money Donations</h3>
+        <p>Give safely and quickly. Your contribution helps fund verified causes. See stories and updates on how your support is used.</p>
+        <a class="btn btn-ghost" href="donate.php">Donate</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🩸</div>
+        <h3>Blood Donation & Appointments</h3>
+        <p>Find upcoming camps, read donor stories, and book an appointment in a few clicks. Save time and save lives.</p>
+        <a class="btn btn-ghost" href="blooddonate.php">Book Now</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧘</div>
+        <h3>Yoga & Wellness</h3>
+        <p>Simple routines, breathing techniques, and posture guides designed for busy schedules. Feel better, every day.</p>
+        <a class="btn btn-ghost" href="yoga.html">Explore Yoga</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Articles & Learning Hub</h3>
+        <p>Curated content from our team: health tips, community stories, and expert insights to keep you informed and inspired.</p>
+        <a class="btn btn-ghost" href="blooddonate.php">Read Articles</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Personal Dashboard</h3>
+        <p>Track your donations, appointments, and saved content in one clean view. Your impact, made visible.</p>
+        <a class="btn btn-ghost" href="dashboard.php">Open Dashboard</a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Volunteer & Community</h3>
+        <p>Connect with local initiatives, join events, and be the reason someone smiles today.</p>
+        <a class="btn btn-ghost" href="contact.php">Get Involved</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section class="section-cream">
+    <div class="title">
+      <h2>Our growing impact</h2>
+      <p>Thank you for making this possible.</p>
+    </div>
+    <div class="stats grid grid-4">
+      <div class="stat">
+        <div class="num">2,500+</div>
+        <div class="label">Lives Reached</div>
+      </div>
+      <div class="stat">
+        <div class="num">800+</div>
+        <div class="label">Units of Blood Facilitated</div>
+      </div>
+      <div class="stat">
+        <div class="num">1,200+</div>
+        <div class="label">Donations Made</div>
+      </div>
+      <div class="stat">
+        <div class="num">300+</div>
+        <div class="label">Yoga Sessions Followed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section>
+    <div class="title">
+      <h2>How it works</h2>
+      <p>Simple steps to start helping and improving your lifestyle today.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Create your account</h3>
+          <p class="muted">Register and personalize your preferences. Your data stays private and secure.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Explore services</h3>
+          <p>Browse donation opportunities, upcoming blood camps, and wellness content tailored to you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Take action</h3>
+          <p>Donate, book an appointment, or start a yoga routine—every action counts.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Track your impact</h3>
+          <p>View your history and see the difference you make through stories and stats on your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed service breakdown -->
+  <section class="section-cream">
+    <div class="title">
+      <h2>What’s inside each service</h2>
+      <p>Deep‑dive into the value you get.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="chip">Donations</span>
+        <h3>Secure giving</h3>
+        <ul style="margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.85">
+          <li>Quick, reliable donation process</li>
+          <li>Transparent stories and updates</li>
+          <li>Receipts and history in dashboard</li>
+          <li>Community highlights & milestones</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="chip">Blood Donation</span>
+        <h3>Appointments made easy</h3>
+        <ul style="margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.85">
+          <li>Browse articles and camp info</li>
+          <li>Book a time slot that works for you</li>
+          <li>Reminders and follow‑ups</li>
+          <li>Myths, FAQs, and safety tips</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="chip">Yoga</span>
+        <h3>Everyday wellness</h3>
+        <ul style="margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.85">
+          <li>Beginner‑friendly routines</li>
+          <li>Breathing and posture guides</li>
+          <li>Desk-stretch series for workdays</li>
+          <li>Save favourites to revisit later</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Your top questions answered.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Do I need an account to use these services?</summary>
+        <p>Yes. Create a free account to donate, book a blood donation appointment, or save wellness content. It helps us personalize your experience and keep your history safe.</p>
+      </details>
+      <details>
+        <summary>Is my payment information secure?</summary>
+        <p>Absolutely. We use secure best practices and never store sensitive card details on our servers. Your donations are processed safely.</p>
+      </details>
+      <details>
+        <summary>How do I book a blood donation appointment?</summary>
+        <p>Go to Blood Donation, choose a slot, and submit your details. You’ll get a confirmation and reminders as the date approaches.</p>
+      </details>
+      <details>
+        <summary>Can I see where my donation goes?</summary>
+        <p>Yes—visit the Donations and Articles sections to view stories and impact updates. Your dashboard also shows your personal history.</p>
+      </details>
+      <details>
+        <summary>Is the yoga content suitable for beginners?</summary>
+        <p>Yes. Start with the beginner routines. Each session includes clear guidance, modifications, and safety tips.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="section-cream">
+    <div class="title">
+      <h2>Ready to make a difference?</h2>
+      <p>Join our community of givers and doers. Small steps, big change.</p>
+    </div>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="donate.php">Start Donating</a>
+      <a class="btn btn-ghost" href="blooddonate.php">Book Blood Donation</a>
+      <a class="btn btn-ghost" href="yoga.html">Try a Yoga Session</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="y"></span> MyWebsite • Built with care</div>
+      <div>Contact: 123@gmail.com • +91 15132 13131</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
